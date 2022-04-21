@@ -5,7 +5,7 @@ const NavBar = () => {
     <div class="navbar">
       <div class="flex-1">
         <a>
-          <img src="logoAuto.PNG" class="object-cover h-16 w-30" />
+          <img src="logoStyle.PNG" class="object-cover h-20 w-30" />
         </a>
       </div>
       <CartWidget />
