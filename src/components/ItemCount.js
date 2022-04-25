@@ -1,41 +1,39 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const ItemCount = () => {
-  const [count, setCount] = useState(1);
+const ItemCount = ({ initial, stock, onAdd }) => {
+  const [qty, setQty] = useState(initial);
 
-  const addHandler = () => {
-    setCount(count + 1);
-  };
-
-  const resHandler = () => {
-    if (count == 1) {
-      return false;
-    } else {
-      setCount(count - 1);
-    }
+  const addProduct = (num) => {
+    setQty(qty + num);
   };
 
   return (
-    <div class="flex-column space-y-2 h-32">
-      <div class="inline-flex">
+    <div className="flex-column space-y-2 h-32">
+      <div className="inline-flex">
         <button
-          onClick={resHandler}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded-l border-y-2 border-x-2 border-black"
+          onClick={() => addProduct(-1)}
+          disabled={qty === initial ? true : null}
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1/2 px-2 rounded-l border-y-2 border-x-2 border-black"
         >
           -
         </button>
-        <strong class="bg-gray-300 text-gray-800 font-bold border-y-2 border-black py-2 px-2">
-          {count}
+        <strong className="bg-gray-300 text-gray-800 font-bold border-y-2 border-black py-1/2 px-2">
+          {qty}
         </strong>
         <button
-          onClick={addHandler}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded-r border-y-2 border-x-2 border-black transition ease-in-out delay-10 duration-250"
+          onClick={() => addProduct(+1)}
+          disabled={qty === stock ? true : null}
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1/2 px-2 rounded-r border-y-2 border-x-2 border-black transition ease-in-out delay-10 duration-250"
         >
           +
         </button>
       </div>
       <div>
-        <button class="transition ease-in-out delay-10 duration-300 bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-black py-2 px-4 border border-black hover:border-transparent rounded">
+        <button
+          className="transition ease-in-out delay-10 duration-300 bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-black py-2 px-4 border border-black hover:border-transparent rounded"
+          onClick={() => onAdd(qty)}
+          disabled={stock === 0 ? true : null}
+        >
           Añadir al carrito
         </button>
       </div>

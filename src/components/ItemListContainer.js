@@ -1,10 +1,9 @@
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 
-const ItemListContainer = ({ name }) => {
+const ItemListContainer = () => {
   return (
     <div>
-      <h1>Hola, {name}</h1>
-      <ItemCount />
+      <ItemList />
     </div>
   );
 };
