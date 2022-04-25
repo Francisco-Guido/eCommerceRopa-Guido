@@ -31,7 +31,7 @@ const ItemList = () => {
   }, []); //[] = array de dependencias
 
   return (
-    <div className="flex justify-around grid md:grid-cols-4 sm:grid-cols-1">
+    <div className="flex justify-around grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
       {
         //estaré implementando un ternario (ver documentación de mozilla) en el cual pregunto por el número de elementos que hay en products
         products.length ? ( //si en products no hay nada, el valor será "0" y en ese caso, un cero se puede interpretar como un valor booleano por lo cual se considerará como falso
