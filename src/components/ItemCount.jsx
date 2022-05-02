@@ -8,8 +8,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div className="flex-column space-y-2 h-32">
-      <div className="inline-flex">
+    <div className="flex-column space-y-2 h-24 sm:text-left sm:w-40">
+      <div className="flex justify-center sm:justify-start">
         <button
           onClick={() => addProduct(-1)}
           disabled={qty === initial ? true : null}
