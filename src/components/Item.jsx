@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom"
 
 
-const Item = ({ name, urlPicture, price, id, stock, desc, category}) => {
+const Item = ({ name, urlPicture, price, id,  desc, stock, category, key}) => {
   
   return (
     <Link to={`/articulo/${id}`}>

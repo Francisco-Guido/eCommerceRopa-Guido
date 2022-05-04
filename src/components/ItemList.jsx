@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 import Item from "./Item";
-import { productList } from "../data/data.js";
+/* import React, { useEffect, useState } from "react";
+import { productList } from "../data/data.js"; */
 
-const ItemList = () => {
+/* const ItemList = () => {
   const [products, setProducts] = useState([]);
 
   const getProducts = new Promise((resolve, reject) => {
@@ -24,6 +24,8 @@ const ItemList = () => {
   useEffect(() => {
     getProductsFromDB();
   }, []); 
+
+ 
 
   return (
     <div className="flex justify-around grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
@@ -58,4 +60,28 @@ const ItemList = () => {
   );
 };
 
-export default ItemList;
+export default ItemList; */
+
+const ItemList = ({ category }) => {
+	console.log(category)
+	return (
+		<>
+			<div className="flex justify-around grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+				{category &&
+					category.map((product) => (
+						<Item
+							id={product.id}
+							name={product.name}
+							price={product.price}
+							urlPicture={product.urlPicture}
+							key={product.id}
+						/>
+					))}
+			</div>
+		</>
+	)
+}
+
+export default ItemList
+
+

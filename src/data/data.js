@@ -5,7 +5,7 @@ export const productList = [
     urlPicture: "/remeramarilla.jpg",
     stock: 11,
     id: 2,
-    category: 1,
+    category: "remera",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
   {
@@ -14,7 +14,7 @@ export const productList = [
     urlPicture: "/remeranaranja.png",
     stock: 15,
     id: 3,
-    category: 1,
+    category: "remera",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
   {
@@ -23,7 +23,7 @@ export const productList = [
     urlPicture: "/otraremera.jpg",
     stock: 12,
     id: 4,
-    category: 1,
+    category: "remera",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
   {
@@ -32,7 +32,7 @@ export const productList = [
     urlPicture: "/buzonasa.png",
     stock: 8,
     id: 5,
-    category: 2,
+    category: "buzo",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
   {
@@ -41,7 +41,7 @@ export const productList = [
     urlPicture: "/buzorosa.jpg",
     stock: 5,
     id: 6,
-    category: 2,
+    category: "buzo",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
   {
@@ -50,7 +50,15 @@ export const productList = [
     urlPicture: "/buzoblanco.jpg",
     stock: 10,
     id: 7,
-    category: 2,
+    category: "buzo",
     desc: "En este lugar iría la descripcion del producto. En este momento estamos pensando que ingresar para que este <p> sea más llamativo :)",
   },
 ];
+
+const task = new Promise((resp) => {
+  resp(productList);
+}, 2000);
+
+export const getItem = () => {
+  return task;
+};

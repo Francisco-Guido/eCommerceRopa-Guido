@@ -16,6 +16,8 @@ const ItemDetail = () => {
   useEffect(() => {
     setArticle(productList.find(m => m.id == articuloId) )
   }, [articuloId])
+
+  console.log(useParams())
   
 
   return (
