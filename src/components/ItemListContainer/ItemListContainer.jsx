@@ -1,19 +1,7 @@
-import ItemList from "./ItemList";
-import { getItem } from "../data/data.js";
+import ItemList from "./ItemList/ItemList";
+import { getItem } from "../../data/data.js";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
-
-
-/* const ItemListContainer = () => {
-
-  return (
-    <div className="pt-5">
-      <ItemList />
-    </div>
-  );
-};
-
-export default ItemListContainer; */
 
 const ItemListContainer = () => {
 	const { categoryId } = useParams()

@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+import ItemCount from "../../ItemDetailContainer/ItemDetail/ItemCount/ItemCount";
 
 const CartWidget = ({ stock }) => {
   return (
