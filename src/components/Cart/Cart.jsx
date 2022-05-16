@@ -16,16 +16,17 @@ const Cart = () => {
 	}
 
 
-	const sumall = cart.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
-	console.log(sumall);
+	const sumall = cart.map(item => item.price * item.quantity).reduce((prev, curr) => prev + curr, 0);
+	
+
 
 	
 
   return (
     (
 		<>
-			<div className="flex flex-col justify-around ">
-				
+			<div className="flex flex-col justify-around flex-wrap">
+			
 				{
 					cart.map((producto) => (
 						
@@ -34,14 +35,16 @@ const Cart = () => {
 						/>
 						
 					))}
-					<div className="flex justify-center">
-					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 border border-blue-700 rounded h-10 w-36" onClick={emptyListHandler}>
-          				Remover todo
-        			</button>
-					<h1></h1>
+					<div className="flex flex-col justify-center items-center">
+							<h1 className="text-3xl mb-2">Total: {sumall}</h1>
+							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 border border-blue-700 rounded h-10 w-36 content-center" onClick={emptyListHandler}>
+								Remover todo
+							</button>
+					
 					</div>
                     
 			</div>
+
 		</>
 	)
   )

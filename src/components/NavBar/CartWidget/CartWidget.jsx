@@ -1,11 +1,17 @@
 import { useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom';
+import Wait from '../../Cart/ItemCart/Wait';
 
 const CartWidget = ({ stock }) => {
 
   const {cart} = useCartContext()
 
   const qtyItems = cart.map(item => item.quantity).reduce((prev, curr) => prev + curr, 0);
+
+
+  if(cart.length ===  0){
+		return 
+	}
 
   return (
     <div className="flex justify-end w-1/2">
