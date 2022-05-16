@@ -12,7 +12,6 @@ const ItemDetail = ({producto}) => {
 
   const onAdd = (count) => {
     setTerminar(true)
-    alert(`Has agregado ${count} ${name} a tu carrito!`);
   };
 
   return (

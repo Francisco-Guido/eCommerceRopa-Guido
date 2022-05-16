@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget/CartWidget";
 import {Link} from "react-router-dom"
-
 const NavBar = () => {
+
   return (
     <div class="flex flex-wrap pb-1">
       <div class="flex w-1/2">
