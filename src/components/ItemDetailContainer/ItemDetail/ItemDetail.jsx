@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({items}) => {
 
-  const {name, urlPicture, price, desc, stock, id} = producto
+  const {name, urlPicture, price, desc, stock, id} = items
 
   const [terminar, setTerminar] = useState(false)
-
+  console.log(name)
   const onAdd = (count) => {
     setTerminar(true)
   };

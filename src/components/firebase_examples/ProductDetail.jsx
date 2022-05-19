@@ -1,36 +1,26 @@
 import React, { useEffect, useState } from "react";
-import {doc, getDoc, getFirestore} from 'firebase/firestore'
+import {getDocs, getFirestore, collection} from 'firebase/firestore'
 
 const ProductDetail = () => {
 
-const [item, setItem] = useState({})
+const [products, setProducts] = useState([])
 
 useEffect(() => {
   const db = getFirestore();
-
-  const iphone = doc(db, 'items', 'DlLmmlZpmNbk20UAMWOh')
-  getDoc(iphone).then( res => { 
-    if(res.exists()){
-      console.log(res)
-      console.log(res.id)
-      console.log(res.data())
-
-      setItem(res.data())
-    }
-   })
+  const itemsCollection = collection(db, 'items')
+  getDocs(itemsCollection).then((snapshot)=>{
+    setProducts(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
+  })
 
 }, [])
 
 
   return (
-    <>
-    <div>Firebase</div>
-    <div>{item.title}</div>
-    <div>{item.description}</div>
-    <div>{item.price}</div>
-    <div>{item.stock}</div>
-    </>
+    <div>
+      {products.map( p => <li> { p.name } </li>)}
+    </div>
   )
 };
 
 export default ProductDetail;
+

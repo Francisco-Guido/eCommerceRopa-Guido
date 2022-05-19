@@ -1,25 +1,27 @@
 import React from 'react'
 import ItemDetail from './ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { getItem } from "../../data/data.js";
 import { useEffect, useState } from "react";
+import {getDocs, getFirestore, collection} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
-  const [product, setProduct] = useState({})
-	const { articuloId } = useParams();
+	const { articulo } = useParams()
 
-	useEffect(() => {
-		if (articuloId === undefined) {
-			getItem().then((resp) => setProduct(resp))
-		} else {
-			getItem().then((resp) => setProduct(resp[articuloId]))
-		}
-	}, [articuloId])
+	const [items, setItems] = useState([]);
+
+	useEffect(()=>{
+		const db = getFirestore();
+		const itemCollection = collection(db, 'items');
+
+		getDocs(itemCollection).then((snapshot)=> {
+			setItems(snapshot.docs.find(x => x.id === articulo).data());
+		})
+	}, [articulo])
 
   return (
     <div className="flex justify-center mt-5">
-        <ItemDetail producto={product}/>
+        <ItemDetail items={items}/>
     </div>
   )
 }

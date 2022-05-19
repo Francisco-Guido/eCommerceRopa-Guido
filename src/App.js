@@ -18,11 +18,11 @@ function App() {
             <Routes>
               <Route path="/" element={<ItemListContainer />}></Route>
               <Route
-                path="/category/:categoryId"
+                path="/category/:category"
                 element={<ItemListContainer />}
               ></Route>
               <Route
-                path="/articulo/:articuloId"
+                path="/articulo/:articulo"
                 element={<ItemDetailContainer />}
               ></Route>
               <Route path="/cart" element={<Cart />}></Route>

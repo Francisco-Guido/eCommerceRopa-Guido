@@ -14,8 +14,8 @@ const NavBar = () => {
       <div className="flex justify-around align-center w-full mb-5">
       <div className="flex w-2/3 justify-around">       
       <Link to={'/'} className="list-none font-bold text-xl text-gray-500 hover:text-black">Catálogo</Link>
-      <Link to={`/category/remera`} className="list-none font-bold text-xl text-gray-500 hover:text-black">Remeras</Link>
-      <Link to={`/category/buzo`} className="list-none font-bold text-xl text-gray-500 hover:text-black">Buzos</Link>       
+      <Link to={`/category/remeras`} className="list-none font-bold text-xl text-gray-500 hover:text-black">Remeras</Link>
+      <Link to={`/category/buzos`} className="list-none font-bold text-xl text-gray-500 hover:text-black">Buzos</Link>       
       </div>
       </div>
       
