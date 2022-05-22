@@ -15,9 +15,11 @@ const ItemDetailContainer = () => {
 		const itemCollection = collection(db, 'items');
 
 		getDocs(itemCollection).then((snapshot)=> {
-			setItems(snapshot.docs.find(x => x.id === articulo).data());
+			const result = snapshot.docs.find(x => x.id === articulo);
+			setItems({ id: result.id, ...result.data()  });
 		})
 	}, [articulo])
+
 
   return (
     <div className="flex justify-center mt-5">

@@ -13,17 +13,18 @@ const CartContextProvider = ({ children }) => {
 
 	// Agregar item al carrito
 	const addToCart = (producto, cantidad) => {
-		const newCart = [...cart]
-
-		const productoIsInCart = isInCart(producto.id)
-
+		const newCart = [...cart];		
+			
+		const productoIsInCart = isInCart(producto.id);
+		
 		if (productoIsInCart) {
+			
 			newCart[
 				newCart.findIndex((prod) => prod.id === productoIsInCart.id)
-			].quantity += cantidad
+			].quantity += cantidad;
 
-			setCart(newCart)
-			return
+			setCart(newCart);
+			return;
 		}
 
 		producto.quantity = cantidad

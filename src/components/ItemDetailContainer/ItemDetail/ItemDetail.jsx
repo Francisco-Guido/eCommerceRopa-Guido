@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 
 
 const ItemDetail = ({items}) => {
-
   const {name, urlPicture, price, desc, stock, id} = items
 
   const [terminar, setTerminar] = useState(false)
-  console.log(name)
-  const onAdd = (count) => {
+
+  const onAdd = () => {
     setTerminar(true)
   };
 
@@ -27,7 +26,7 @@ const ItemDetail = ({items}) => {
             className="transition ease-in-out delay-10 duration-300 bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-black py-2 px-4 border border-black hover:border-transparent rounded">
               Terminar compra
             </Link>           
-          ) : (<ItemCount stock={stock} onAdd={onAdd} initial={1} id={id}/>)}            
+          ) : (<ItemCount stock={stock} onAdd={onAdd} initial={1} id={id}/>)}
         </div>
     </div>
   )

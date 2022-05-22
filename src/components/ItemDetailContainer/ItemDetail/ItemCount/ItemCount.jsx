@@ -23,6 +23,8 @@ const ItemCount = ({ stock, onAdd, id}) => {
   const handleClick = (id, cantidad) => {
 		const findProduct = products.find((producto) => producto.id === id)
 
+    console.log(findProduct)
+    console.log(id)
 		if (!findProduct) {
 			alert("Error en la base de datos")
 			return
@@ -31,9 +33,7 @@ const ItemCount = ({ stock, onAdd, id}) => {
 		addToCart(findProduct, cantidad)
 		onAdd(count)
 	}
-
-
-
+  
   return (
     <div className="flex-column space-y-2 h-24 sm:text-left sm:w-40">
       <div className="flex justify-center sm:justify-start">
