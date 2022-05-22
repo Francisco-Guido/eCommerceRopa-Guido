@@ -11,7 +11,7 @@ const AppContextProvider = ({ children }) => {
 
 	useEffect(() => {
 	const db = getFirestore();
-	const itemsCollection = collection(db, 'items')
+	const itemsCollection = collection(db, 'items');
 	getDocs(itemsCollection).then((snapshot)=>{
 		setProducts(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
 	})
