@@ -36,7 +36,7 @@ const Cart = () => {
 				)
 
 		} else {
-			alert("Error en la carga de formulario")
+			alert("Debe ingresar sus datos para poder finalizar la compra")
 		}
 	}
 
@@ -68,7 +68,7 @@ const Cart = () => {
   return (
     (
 		<>
-			<div className="flex flex-col justify-around flex-wrap">
+			<div className="flex flex-col justify-around">
 			
 				{
 					cart.map((producto) => (
@@ -80,7 +80,7 @@ const Cart = () => {
 					))}
 					<div className="flex flex-col justify-center items-center">
 							
-							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 border border-blue-700 rounded h-10 w-36 content-center" onClick={emptyListHandler}>
+							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 border border-blue-700 rounded h-10 w-36 content-center mt-5" onClick={emptyListHandler}>
 								Remover todo
 							</button>
 							<form
@@ -92,7 +92,7 @@ const Cart = () => {
 								<input type="text" placeholder="Nombre" name="name" value={order.name} class="input input-bordered input-info w-full max-w-xs mt-3" />
 								<input type="number" placeholder="Telefono" name="phone" value={order.phone} class="input input-bordered input-info w-full max-w-xs mt-3" />
 								<input type="email" placeholder="Email" name="email" value={order.email} class="input input-bordered input-info w-full max-w-xs mt-3" />
-								<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Enviar formulario</button>
+								<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">Finalizar compra</button>
 							</form>
 					
 					</div>

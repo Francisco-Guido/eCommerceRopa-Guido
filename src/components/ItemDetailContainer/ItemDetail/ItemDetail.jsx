@@ -22,10 +22,19 @@ const ItemDetail = ({items}) => {
             <h1 className="sm:text-left text-4xl font-bold">{name}</h1>
             <h4 className="sm:text-left text-3xl font-semibold">${price}</h4>
             <p className="sm:text-left text-1xl font-semibold sm:w-96">{desc} </p>
-            {terminar ? ( <Link to="/cart"
+            {terminar ? ( 
+            <div className = "flex flex-col">
+              <Link to="/cart"
+            className="transition ease-in-out delay-10 duration-300 bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-black py-2 px-4 border border-black hover:border-transparent rounded mb-2">
+               Ir al carrito
+            </Link>
+            <Link to="/"
             className="transition ease-in-out delay-10 duration-300 bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-black py-2 px-4 border border-black hover:border-transparent rounded">
-              Terminar compra
-            </Link>           
+              Ver catálogo
+            </Link>
+            </div>
+            
+                
           ) : (<ItemCount stock={stock} onAdd={onAdd} initial={1} id={id}/>)}
         </div>
     </div>
