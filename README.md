@@ -6,6 +6,6 @@
 
 #### Contacto : [LinkedIn](https://www.linkedin.com/in/francisco-nicolas-guido-762aab199/)
 
-## Screenshots
+## Home
 
 ![App Screenshot](https://github.com/FranciscoGuido-99/eCommerceRopa-Guido/blob/master/public/STYLESHOPDesktop.PNG)
